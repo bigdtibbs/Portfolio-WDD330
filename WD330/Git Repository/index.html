@@ -4,7 +4,27 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WDD330 Portfolio Winter 2021</title>
-  <script>
+  <script src="main.js">
+
+      function jsFunction() {
+
+          // Declare variables.
+          //var links = src="main.js";
+          var ol = document.createElement("ol");
+          document.getElementById("navMenu").appendChild(ol);
+
+          // Loop to assemble the link.
+          for(let i = 0; i < links.legnth; i++) {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+
+            a.href = links[i].url;
+            a.innerText = links[i].label;
+
+            ol.appendChild(li);
+            li.appendChild(a);
+          }
+      }
 
   </script>
 
@@ -15,8 +35,10 @@
 
 <body>
   <h1>WDD330 Portfolio</h1><br>
-  <ol>
-    <li><a href="week01">Week 01</a></li>
-  </ol>  
+  <div id="navMenu">
+    <ol>
+
+    </ol>
+  </div>
 </body>
 </html>
