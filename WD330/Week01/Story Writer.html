@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <title>Story Writer</title>
+  <script>
+    function loadStory() {
+
+      // Declare variables.
+      var storyName = document.getElementById("name_input").value;
+      var storyHTML = localStorage.getItem(storyName);
+
+      // Update story_display to show the story (if needed).
+      document.getElementById("story_editor").value=storyHTML;
+    }
+
+    function saveStory() {
+
+      // Declare variables.
+      var storyName = document.getElementById("name_input").value;
+      var storyHTML = document.getElementById("story_editor").value;
+
+      // Set localStorage (Key, Value).
+      localStorage.setItem(storyName, storyHTML);
+    }
+
+    function displayStory() {
+
+      // Declare variables.
+      var storyHTML = document.getElementById("story_editor").value;
+
+      // Update story_display to show the story.
+      document.getElementById("story_display").innerHTML = storyHTML;
+    }
+
+  </script>
+
+  <style>
+      textarea{
+          width: 800px;
+          height: 250px;
+          background-color: lightyellow;
+      }
+  </style>
+</head>
+
+<body>
+    <h1>Story Writer</h1>
+  Story Name: <input id="name_input"></input>
+  <section>
+      <button onclick="loadStory()">Find & Edit It</button>
+      <button onclick="saveStory()">Save It</button>
+      <button onclick="displayStory()">Display It</button>
+  </section>
+
+  <textarea id="story_editor" placeholder="Write a story here."></textarea>
+  <section id="story_display"></section>
+  
+</body>
+</html>

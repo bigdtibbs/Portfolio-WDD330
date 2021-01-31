@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 04 Notes</title>
+  <script>
+    
+  </script>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <h1> Week 04 Notes</h1>
+  <h4> Forms</h4>
+  Uses form tags. <br>
+  <ul>
+    <a> form tag </a>
+  </ul>
+  Made up of input fields, menus, buttons. <br>
+  Can use PHP on the backend, but more & more uses JS on the front end to process information. <br>
+  Form controls have initial values, but can be changed. <br>
+
+  <h4> Example Form </h4>
+  <form action="results.html" method="GET">
+      <div>
+        <label for="Name">Name</label>
+        <input type="text" name="Name" id="Name" placeholder="User Name" required>
+      </div>
+      <div>
+        <label for="Password">Password</label>
+        <input type="password" name="Password" id="Password" placeholder="Password" required>    
+      </div><br>
+      <div>
+      <h4>Gender</h4>
+      <div>
+        <label for="male"> Male </label>
+          <input type="radio" name="Gender" id="male" value="Male">
+      </div>
+      <div>
+        <label for="female"> Female </label>
+          <input type="radio" name="Gender" id="female" value="Female">
+      </div><br>
+        <button type="submit"> Submit </button>
+        <button type="reset"> Reset </button>
+      </div>
+</form>
+
+</body>
+</html>
