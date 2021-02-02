@@ -1,0 +1,102 @@
+REWIRE YOUR BRAIN
+
+Desktop Peaked in 2011 (Sales declining since 2011)
+Smartphone introduced in 2007, overtook desktop in 2011.
+
+The Paradignm Shipft 
+1 desktop, 1 laptop per household - Replaced every 4 - 5 years
+2 - 3 devices per individual (Phone, watch, tablet) - Replaced every ~ 2 Years
+
+Mobile online traffic up 18.6 % from 2013 - 2014.
+
+Responsibe Retrovitting a Website
+* Cheaper and Faster than groud up re-write.
+* Better mobile experience than desktop only.
+* Doesn't address screen real-estate issues.
+* Doesn't address touch interaction issues.
+
+Mobile First Design
+* Time consuming and costly for a full rebuild.
+* Provides best experience across many devices.
+* Address constraints of mobile size/bandwidth
+* Future friendly and ready for growth.
+** Start small and scale up (Shoving marshmallow into a piggy bank).
+** Mobile is not a fad.
+
+
+HOW TO IMPROVE UX (User Experience) BY UNDERSTANDING USERS
+
+Be There (Immediate). Be Useful (Relevant). Be Quick (Frictionless).
+
+Reachability Matters
+ - 75% of people rely on thumbs.
+ - 49 % use one handed grip.
+
+Speed Matters
+ - Google: 1/2 sec delay = 20% drop in traffic.
+ - bing: 2 sec delay = 4% drop in revenue.
+ - AOL: Fastest 10% of users stay 50% longer.
+Networks Matter
+ - 4G vs 3G
+   * Q2 2013: 126 mill vs 1.7 bill subscribers (4G vs 3G)
+To Improve Speed
+* Reduce image usage thoughought sites/apps
+* SVG/Webfonts are lower bandwidth
+* Optimize and Minify CSS and JS files
+* GZIP files to eliminate unnecessary data
+
+
+BETTER MOBILE UX (User Experience) WITH STRATEGIC MENU DESIGN
+
+Reachability
+* Menu/Submenu icons at bottom.
+* Primary controls at bottom.
+Placement matters.
+ - Addresses Reachability issues.
+ - Creates perception of speed.
+ - Improved engagement rates.
+ - Increased user satisfaction.
+
+
+DESIGNING INTUITIVE AND MOBILE FRIENDLY FORMS (Inputs)
+
+***Reduce Cognative Load!!!
+ - Use only essential fields.
+ - Display labes inside the fields.
+ - Use Float labels.
+ - Pagenation (Break it down into sections)
+    * Let the user know how many pages there will be (Page 1 of 4).
+ - Use autofill feature.
+ - Passwords are a nightmare!
+    * Show passwords by default.
+    * Allow users to hide passwords if they need to/want to. Make it easy.
+ - Credit card forms:
+    * Space fields.
+    * Space groupings of four numbers.
+ - Give the user the best keyboard for the field (number pad for number entry).
+ - Phone Numbers:
+    * Don't force a copy and paste.
+    * Linking phone numbers on your website so that it is easier for people to call from a mobile device.
+        - Example: <a href="tel:14035551234">403-555-1234</a>
+
+
+DESIGNING A BETTER MOBILE ADVERTISING USER EXPERIENCE
+
+How do people respond to technologic developments?
+
+Advertising can take up more of a webpage than actual content.
+Users didn't come to your website to look at ads.
+Keep it simplea nd sleek.
+Make sure it's unobtrusive. Content first.
+
+BAD advertising techniques
+* Popup advertising is BAD. Don't use it.
+* Disgusing adds as content is BAD.
+* Putting adds at the top of the page so people have to scroll to find their content is BAD.
+* Permanant advertisement banner where your thumb is likely to contact is BAD.
+
+Good advertising techniques
+* Make them small and simple.
+   - An add that reveals when clicked.
+   - An add that scrolls out when clicked.
+   - A window that shows an add through the content.

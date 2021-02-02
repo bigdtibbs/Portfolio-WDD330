@@ -1,0 +1,169 @@
+<html>
+  <link rel='stylesheet' href='tictactoe.css'>
+<table>
+  <tr class="one">
+    <td class="one" ontouchend="clicked(this)"></td>
+    <td class="two" ontouchend="clicked(this)"></td>
+    <td class="three" ontouchend="clicked(this)"></td>
+  </tr>
+
+  <tr class="two">
+    <td class="one" ontouchend="clicked(this)"></td>
+    <td class="two" ontouchend="clicked(this)"></td>
+    <td class="three" ontouchend="clicked(this)"></td>
+  </tr>
+  <tr class="three">
+    <td class="one" ontouchend="clicked(this)"></td>
+    <td class="two" ontouchend="clicked(this)"></td>
+    <td class="three" ontouchend="clicked(this)"></td>
+  </tr>
+
+</table>
+<button onclick="reset()">RESET</button>
+
+<div id="victory"></div>
+<script >
+  var victor=document.getElementById("victory");
+  var turn="x";
+  var markedx= [];
+  var markedo=[];
+  function clicked(cell){
+    if(!cell.innerHTML=="" || !victor.innerHTML==""){
+      console.log("dont click");
+    }
+    else{
+    cell.innerHTML=turn;
+    if(turn=="x"){
+      markedx.push(cell.parentElement.classList[0]+cell.classList[0] );
+      turn="o";
+    }else{
+      markedo.push(cell.parentElement.classList[0]+cell.classList[0]);
+      turn="x";
+    }
+    checkWin();
+  }
+
+}
+function reset(){
+  turn="x";
+  tds = document.getElementsByTagName("td");
+  for(x in tds){
+    tds[x].innerHTML="";
+  }
+  markedo = [];
+  markedx = [];
+  victor.innerHTML="";
+}
+
+function checkWin(){
+  console.log(markedx);
+  let xwin=false;
+  let owin=false;
+  if (markedx.includes("oneone") && markedx.includes("twoone") && markedx.includes("threeone")  ){
+    xwin = true;
+    
+    setTimeout(function() { reset(); }, 2000);
+
+}
+else if (markedo.includes("oneone") && markedo.includes("twoone") && markedo.includes("threeone")  ){
+
+  owin = true;
+
+}
+else if (markedx.includes("onetwo") && markedx.includes("twotwo") && markedx.includes("threetwo")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("onetwo") && markedo.includes("twotwo") && markedo.includes("threetwo")){
+
+  owin = true;
+
+}
+else if (markedx.includes("onethree") && markedx.includes("twothree") && markedx.includes("threethree")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("onethree") && markedo.includes("twothree") && markedo.includes("threethree")){
+
+  owin = true;
+
+}
+else if (markedx.includes("oneone") && markedx.includes("onetwo") && markedx.includes("onethree")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("oneone") && markedo.includes("onetwo") && markedo.includes("onethree")){
+
+  owin = true;
+
+}
+else if (markedx.includes("twoone") && markedx.includes("twotwo") && markedx.includes("twothree")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("twoone") && markedo.includes("twotwo") && markedo.includes("twothree")){
+
+  owin = true;
+
+}
+else if (markedx.includes("threeone") && markedx.includes("threetwo") && markedx.includes("threethree")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("threeone") && markedo.includes("threetwo") && markedo.includes("threethree")){
+
+  owin = true;
+
+}
+
+else if (markedx.includes("oneone") && markedx.includes("twotwo") && markedx.includes("threethree")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("oneone") && markedo.includes("twotwo") && markedo.includes("threethree")){
+
+  owin = true;
+
+}
+else if (markedx.includes("onethree") && markedx.includes("twotwo") && markedx.includes("threeone")  ){
+  xwin = true;
+    
+
+}
+else if (markedo.includes("onethree") && markedo.includes("twotwo") && markedo.includes("threeone")){
+
+  owin = true;
+
+}
+
+if(owin){
+  victor.innerHTML="O wins";
+
+  setTimeout(function() { reset(); }, 2000);
+ 
+}
+if(xwin){
+  victor.innerHTML="X wins";
+
+  setTimeout(function() { reset();}, 2000);
+  
+
+}
+if(markedx.length+markedo.length==9 && !owin && !xwin){
+  victor.innerHTML="YOU TIED";
+  
+  setTimeout(function() { reset();}, 2000);
+}
+}
+
+
+
+
+</script>
+</html>

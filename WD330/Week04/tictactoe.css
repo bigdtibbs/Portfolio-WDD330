@@ -1,0 +1,30 @@
+
+td{
+  min-width: 50px;
+  min-height: 50px;
+  text-align: center;
+  font-size: 2.0rem;
+}
+tr.one td{
+  border-bottom: 1px black solid;
+}
+tr.two td{
+  border-bottom: 1px black solid;
+  border-top: 1px black solid; 
+}
+tr.three td{
+  border-top: 1px black solid; 
+}
+
+tr .two{
+  border-left: 1px black solid; 
+  border-right: 1px black solid; 
+}
+table{
+  border-collapse: collapse;
+  height:150px;
+  width:150px;
+}
+tr{
+  height:50px;
+}

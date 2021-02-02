@@ -1,0 +1,171 @@
+Functions stored in objects are called methods.
+Methods allow objects to "act", or to do something (object.doSomething()).
+Methods reference objects with "this" keyword (this.name).
+ * The value of "this" is defined at run-time.
+   - Means you can assign it over and over again.
+   - You can assign it, but it has no value until it is called.
+Dot OR square brackets access the method in Javascript.
+ - Example: name.first() = name['first'] *Weird, but allows for string concatenation.*
+
+OBJECT SYNTAX
+let user = {  // Declaring an Object. Use "let".
+
+  // Declare Variables.
+  name: "Big D",
+  age: 41,
+  arrow: "==>",
+  
+  // Methods (functions stored in objects)
+  sayHi()  { console.log("Hello " + this.name + "!"); },
+  sayAge() { console.log("You are " + this.age + " years old."); },
+  makeArrow() { let shot = () => console.log(this.arrow); shot(); } // *Arrow function.*
+
+}; // Close with semi-colon.
+
+INVOKING OBJECT METHODS (using above "user" object)
+user.sayHi();
+  >> Hello Big D!
+user.sayAge();
+  >> You are 41 years old.
+user.makeArrow();
+  >> ==>
+
+CONSTURCTOR SYNTAX
+function Car(year, make, model) {
+  this.year = year;
+  this.make = make;
+  this.model = model;
+
+  this.getInfo = function() {
+    return 'You are looking at a ${this.year} ${this.make} ${this.model}.';
+}
+
+INSTANTIATING AN OBJECT (using Constructor "car"above)
+const car1 = new Car('1975', 'Chevy', 'Van');
+const car2 = new Car('2001', 'Chevy', 'Corvette');
+console.log(car1.getInfo());
+
+PROTOTYPE METHODS (using car object above)
+*** This removes the getInfo function from the Constructor above.
+    - Cleaner. Not all created objects will need getInfo.
+Car.prototype.getInfo = function() {
+  return 'You are looking at a ${this.year} ${this.make} ${this.model}.';
+}
+
+INHERITENCE (Objects inheriting from other objects. Example using 'car' from above)
+function Truck(year, make, model, ton) {
+  Car.call(this, year, make, model);
+
+  this.ton = ton;
+}
+
+Truck.prototype = Object.create(Car.prototype); // Inherit Prototype *** Cool!
+const truck1 = new Truck('2001', 'Chevy', 'Silverado', '1500HD'); // Instantiate Truck object.
+
+CREATING AN OBJECT OF PROTOTYPES SYNTAX 26:25
+// Object of Prototypes
+const allPrototypes = {
+  getInfo: function() {
+    return 'You are looking at a ${this.year} ${this.make} ${this.model}.';
+  },
+
+  getVehicleAge: function() {
+    const years = new Date().getFullYear() - this.year;
+    return 'This ${this.year} ${this.make} ${this.model} is ${years} old.'};
+  }
+}
+
+// Using the object of prototypes.
+const car1 = Object.create(allPrototypes);
+car1.year = '2001';
+car1.make = 'Chevy';
+car1.model = 'Corvette';
+
+OR
+
+const car1 = Object.create(allPrototypes, {
+  year:  { value: '2001' },
+  make:  { value: 'Chevy' },
+  model: { value: 'Corvette' }
+});
+
+CLASSES IN JAVASCRIPT
+class Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+
+  getSummary() {
+    return '${this.title} was written by ${this.author} in ${this.year}.';
+  }
+}
+
+// Instantiate Object
+const book1 = new Book('The Last Odyssey', 'James Rollins', '2020');
+
+console.log(book1);
+
+// SUBCLASSES
+
+// Magazine sublcass. Gets created outside of parent class.
+class Magaxine extends (Book {
+  constructor(title, author, year, month) {
+    super(title, author, year);
+
+    this.month = month;
+  }
+}
+
+// Instantiate magazine sublass.
+const mag1 = new Magazine('Ensign', 'John Doe', '2021', 'January');
+
+console.log(mag1.getSummary());
+
+
+DOM (Document Object Model)
+- document.getElementById() <- Get's an Element in the document).
+- Used to access elements inside of the website.
+  * Update and change elements or nodes
+** document.getElementById("example");
+      - document.querySelector("#example");
+   docuemnt.getElementByClassName("example");
+      - document.querySelector(".example");
+   document.getElementByTagName();
+*QUERY SELECTOR
+** document.querySelector(" ").innerHTML = "Example";
+   - Used to grab a single element/node.
+   - Will grab the first element/node in the document if you do not specify an element/node.
+** let example = document.querySelectorAll("a");
+   - Used to grab all the elements/nodes in a document.
+   - In this example, it will grab all of the link/anchor tags (<a></a>) in the document.
+     It puts them into an array so that we can do something with them later.
+Helpful Tools
+- document.querySelector("#example").hasAttribute("id");
+- document.querySelector("#example").getAttribute("id");
+- document.querySelector("#example").setAttribute("href", "www.google.com"); <- Adding hyperlink
+- document.querySelector("#example").removeAttribute("href"); <- One Parameter.
+
+UPDATING CSS (examples)
+- document.getElementById("h1_id").style.color = "red";
+  - document.querySelector("h1_id").style.color = "red";
+- document.getElementById("h1_id").style.fontSize = "20px";
+  - document.querySelector("h1_id").style.fontSize = "20px"; // camelCase fontSize here. 
+- document.getElementById("h1_id").style.cssText = "color:red; font-size: 20px;";
+  - document.querySelector("h1_id").style.cssText = "color:red; font-size: 20px;";
+- Using SETATTRIBUTE (Not Recommended).
+  - document.querySelector("h1_id").setAttribute("style", "color: red; font-size: 20px;");
+
+EVENT HANDLERS/LISTENERS
+- Does something when the user performs an action.
+*Event Handlers
+- example:
+    <p onclick="console.log('You Clicked This')">Click Here</p>
+*Event Listeners
+ - Uses addEventListener() method on a node object.
+ - example:
+   document.body.addEventListener('click', doSomething);
+
+.join(" ") // Concatenates items in an array
+

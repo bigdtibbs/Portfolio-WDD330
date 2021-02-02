@@ -1,0 +1,65 @@
+FORMS
+
+Uses Form Tags
+
+<form></form>
+* action="" (results.html)
+  - Will be another html page if method is GET.
+* method="" GET or POST
+  - Client side = GET, Server side = POST.
+  - Probably Client side for this class (front end).
+<label></label>
+* Description for the field.
+  - <label> Name </label>
+* for="" (Name)
+  - This will make the field highlight when the user clicks on it.
+  - To make it work, it has to have an accompanying "id=" in the <input> tag.
+  - Will have accompanying <input> tag.
+<input>
+* <input type="text" name="Name" id="Name">
+* Specify type="". Good habbit to get into.
+  - Special "password" type to ***** out passwords as they are entered.
+  - Types include; text, password, email, number (min="1" max="100" step="5"), date (min="2019-06-10"), checkbox, radio
+    * Radio buttons can select one option (gender, for example).
+      Gender
+      <div>
+        <label for="male"> Male </label>
+          <input type="radio" name="Gender" id="male" value="male'>
+      </div>
+      <div>
+        <label for="female"> Female </label>
+          <input type="radio" name="Gender" id="female" value="female>
+      </div>
+* <input> tag can have a predetermined value="" (value="userName").
+  - Useful if you already know what the value is.
+* <input> tag can have a placeholder value (placeholder="username").
+* You can make an <input> a required field by putting "required" in the tag.
+  - <input name="Name" required>
+  - To make it look good, put each label in its own <div></div>.
+  * <div>
+      <label for="Name"> Name </label>
+      <input type="text" name="Name" id="Name" placeholder="username" required>
+    </div>
+<button></button>
+* Want some way to submit you info, right?
+  - <button type="submit"> Submit </button>
+    <button type="reset">  Reset  </button>
+
+LIBRARIES
+
+* jQuery
+  - If you see the $ sign, it's likely jQuery.
+
+* Underscore & Lodash
+  - If you see the underscore _. , it's likey one of these.
+
+const win = [
+{1, 2, 3},
+{4, 5, 6},
+{7, 8, 9},
+{1, 4, 7},
+{2, 5, 8},
+{3, 6, 9},
+{1, 5, 9},
+{3, 5, 7}
+];

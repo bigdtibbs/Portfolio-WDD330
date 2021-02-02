@@ -1,0 +1,234 @@
+FUNCTIONS
+
+Declaring A Function
+3 Types of Function Declartions
+- Function Declarations (Normal way)
+  function youDaMan() {
+  // Does something.
+  }
+- Function Expressions (Assigning a function to a variable)
+*Two ways to do this (go figure)
+**Anonymous Function
+  const youDaMan = function() {
+  // Do something.
+  }
+**Named Function
+  const youDaMan = function beDaMan() {
+  // Do something.
+  }
+- Constructor Function
+** NOT RECOMMENDED.
+ - Ugly.
+ - Bad syntax.
+ const youDaMan = new Function('console.log("You Really Are The Man!");');
+- Arrow Functions (This is New! Pay Attention!
+ => Great to use if the function is has one line.
+ => Always Anonymous (const square = x => x*x;)
+ => Single parameters don't require parenthesis (see above example).
+ => No return statement required if that is all that is in the body of the function.
+ => If more than one parameter:
+    const add = (x,y) => x+y;
+ => If the function does not require parameters, use emptery parentheses like this:
+    const hello = () => alert('Hello World!');
+
+Invoking A Function (Calling a Function)
+Use parenthesis followed by the semicolon.
+  - youDaMan();
+
+
+Returning Values
+function dora() {
+return 'My daughter';
+}
+
+
+Parameters and Arguments
+* Parameters: Set when the fuction is defined.
+ - function example(x){
+   return x * 2;
+   }  // x is a parameter in this case.
+ - Default Parameters
+   * Assigned if no arguments are provided when invoked.
+   * Assigned when function is defined.
+   function hello(name='World'){
+   console.log(Hello ${name}!);
+   }
+   * You can overide the default value (pretty cool!).
+   hello('Universe');
+   << 'Hello Universe!'
+   * Should always come after non-default parameters (or they will get over-wrote).
+* Arguments: Provided when a function is invoked.
+ - example(4); // 4 is an argument in this case.
+* A function passed as an argument to another function is called a CALLBACK.
+**Cool thing called the rest operator.
+  - Allows for any number of arguments to be entered.
+  - Uses thre dots in front of last argument (...args)
+  Mean Example
+  function mean(...values) { // rest operator
+  let total = 0;
+  for (const value of values) { // for-of loop
+       total += value;
+       }
+  return total/values.length; // length property of values
+  }
+
+Using Callback to Sort Arrays of Numbers (Interesting, Possibly Helpful in the Future)
+* Create a function to compare two values from the array.
+  function numberically (a, b) {
+  return a - b);
+  }
+  ** Can I do this with an arrow function?
+     const numberically = (a,b) => a-b;
+ * Now use the sort() method WITH the callback.
+   [1, 4, 8, 3, 98, 7].sort(numerically);
+
+ForEach() Method (Alternative For loop)
+ - example:
+   const color = ['Red', 'Yellow', 'Blue']
+
+   // forEach() syntax using colors array above.
+   colors.forEach( (color, index) =>
+       console.log( "Color at position ${index} is ${color}') );
+
+Map() Method
+ - Takes a callback function as a parameter.
+ - Iterates over items in an array.
+ - example:
+   const square = x => x*x; // Square arrow function from earlier.
+   [1, 2, 3].map(square);
+   >> [1, 4, 9] // Squared every number that we passed it.
+ - You can also use an anonymous function as a callback.
+   [1, 2, 3].map( x=> 2*x);
+   >> [2, 4, 6]
+
+Reduce() Method
+ - Reduces all items in the array to one.
+ - example: Will sum all numbers in the array.
+   [1, 2, 3, 4, 5].reduce( (acc, val) => prev + val);
+   >> 15
+   * acc starts as 1, the first value in the array[0].
+   * val is the current value in the array[i].
+
+Filter() Method
+ - Returns a new array with only items from the original that returned true when passed ot the callback function.
+ - example: Find even numbers in an array.
+ const numbers = [ 2, 7, 6, 5, 11, 23, 12]
+ numbers.filter(x => x %2 === 0); // Returns true if the number is even.
+ >> [2, 6, 12]
+ * To find all the true values in an array:
+   array.filter(Boolean);
+ * To find all the false values in an array:
+   array.filter(x => !x);
+
+
+ELOQUENT JAVASCRIPT SANDBOX CODE
+2.1
+for (let string = "#"; string.length < 8; string += "#") {
+  console.log(string);
+}
+
+2.2
+for (let i = 1; i <=100; i++) {
+  if (i % 3 == 0 && i % 5 == 0) {
+    console.log("FizzBuzz");
+  }
+  else if (i % 5 == 0) {
+    console.log("Buzz");
+  }
+  else if (i % 3 == 0) {
+    console.log("Fizz");
+  }
+  else {
+    console.log(i);
+  }
+  
+  console.log("\n");
+}
+
+The book solution was much cleaner.
+/****
+* Book Solution
+*****
+for (let n = 1; n <= 100; n++) {
+  let output = "";
+  if (n % 3 == 0) output += "Fizz";
+  if (n % 5 == 0) output += "Buzz";
+  console.log(output || n);
+}
+******/
+
+2.3
+let char = "#";
+let space = " ";
+let string = "";
+let size = 8;
+let counter = 1;
+
+for (let x = 0; x < size; x++) {
+  
+  counter = 1;
+  string = "";
+  
+  if (x % 2 != 0) {
+     for (let y = 0; y < size; y++) {
+    
+        if (counter % 2 != 0) {
+           string += space;
+        }
+        else {
+           string += char;
+        }
+    
+        counter++;
+    
+        if (counter == 9) {
+           string += "\n";
+        }
+     }
+  }
+  else {
+      for (let y = 0; y < size; y++) {
+    
+      if (counter % 2 == 0) {
+         string += space;
+      }
+      else {
+         string += char;
+      }
+    
+      counter++;
+    
+      if (counter == 9) {
+         string += "\n";
+      }
+    }
+  }
+  
+  console.log(string);
+}
+
+The book solution was much simplier.
+/******
+* Book Solution
+*******
+let size = 8;
+
+let board = "";
+
+for (let y = 0; y < size; y++) {
+  for (let x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0) {
+      board += " ";
+    } else {
+      board += "#";
+    }
+  }
+  board += "\n";
+}
+
+console.log(board);
+********/
+
+"People think that computer science is the art of geniuses but the actual reality is the opposite, just many people doing things that build on each other, like a wall of mini stones."  // Good, cause I'm no genius at this stuff. But I can do small stones.
+
+Donald Knuth
