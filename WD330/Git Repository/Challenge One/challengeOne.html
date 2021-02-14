@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="challengeOne.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Fauna+One">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="toDo">
+            <h1> To Do's </h1>
+        </div>
+    <div class="listArea">
+        <ul id="toDoList">
+
+        </ul>
+        <footer id="listFooter">
+            <fieldset>
+                <span id="tasksLeft"></span>
+                <button id="allBtn">All</button>
+                <button id="activeBtn">Active</button>
+                <button id="completedBtn">Completed</button>
+            </fieldset>
+        </footer>
+    </div><br><br>
+    <div class="addToDo">
+        <form action="ls.html" method="GET">
+            <div>
+                <label for="item"></label>
+                <input type="text" name="addItem" id="addItem" placeholder="Add To Do Item">
+                <img src="plusIcon.png" id="addBtn">
+            </div>
+        </form>
+    </div>
+
+    </div>
+    <script src="challengeOne.js"></script>
+    <script src="ls.js"></script>
+</body>
+
+</html>

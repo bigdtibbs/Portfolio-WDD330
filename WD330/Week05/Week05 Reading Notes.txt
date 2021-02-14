@@ -1,0 +1,134 @@
+TESTING AND DEBUGGING
+
+System Error: Problem with the system or an external device that the system is interacting with.
+  - Not our area of expertise, but we should do all we can to work around these problems.
+
+Programmer Error: The program contains incorrect syntax or faulty logic.
+  - Our Court. Minimize these. Fix promptly.
+
+User Error: The user entered data incorrectly and the program doesn't know how to handle it.
+  - We should anticipate these and try to prevent them.
+
+Exceptions
+  - Errors that produce a return value that can be used by the program to deal with the error.
+  - Example: Trying to call a function that does not exist in the program:
+      unicorn();
+      << ReferenceError: unicorn is not defined
+  - Produce Stack Traces.
+    * Can be used to locate where the exception occured.
+
+Warnings: Won't cause the program to crash, BUT, the program will continue to run incorrectly.
+
+Strict Mode
+  - Prevents "sloppy programming' practices.
+  - Add "use strict;" to the beginning of a JavaScript file.
+  - Can add to any function declaration.
+
+Linting Tools
+  - The easiest option, as I understand it, is to find an online linting tool. Copy and paste your code into it and then see how bad of a job you did.
+
+Feature Detection / Browser Support
+  - Use if statements to activate features if they exist.
+  - Example: Using a holoDeck API if it is supported by the browser.
+      if (window.holoDeck) {
+        virtualReality.activate();
+      }
+  - Modernizr and Can I Use are useful libraries for checking browser support.
+      * https://modernizr.com/docs
+      * http://caniuse.com
+
+Debugging in the Browser
+  - Debugging: The process of finding wherethe bug occurs in the code and then dealing with it.
+  - Breakpoints: Used to halt the progress of the code and allow us to see different variable values at a certain point in the program.
+    * alert()
+      - Stops the program from running until OK is clicked.
+      - Can be used to show the value of a variable at a certain point in the program.
+
+Debugging in the Console
+  - console.log()
+  - console.trace()
+    * Logs an interactive stack trace that shows what functions were called in the lead up to an exception occuring.
+
+Debugging Tools
+  - https://developer.chrome.com/devtools/docs/javascript-debugging
+  - Use keyword "debugger;"
+*** REMOVE ALL DEBUGGER REFERENCES BEFORE SHIPPING FINAL PRODUCT OR PROGRAM WILL APPEAR TO "FREEZE" ***
+
+Error Objects
+  - ???
+  - There's seven specific error objects; EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError, and InternalError. (Page 364, Novice to Ninja.)
+
+Throwing Exceptions
+  - Kind of like Catch/Throw, only just the Throw.
+  - You can make your own "throw" statements.
+  - Best to throw an Error Object.
+  - Example: throw new Error(`Value of ${car} in if/else statement.`);
+  - Example: 
+      function squareRoot (number) {
+        'use strict';
+         if (number < 0) {
+           throw new RangeError('You cannot find the square root of a negative number.')
+         }
+         return Math.sqrt(number);
+      };
+
+Exception Handling
+  - As it turns out, we can wrap JavaScript code in a Try Block.
+  - Uses 'try', 'catch', and 'finally'. 
+  - "finally" always runs, regardless if the "catch" is used.
+  - Example:
+      function imaginarySquareRoot(number) {
+        'use scrict';
+        let answer;
+        try {
+          answer = String(squareRoot(number));
+        }
+        catch(error) {
+          answer = squareRoot(-number) + "i";
+        }
+        finally {
+          return `+ or - ${answer}`;
+        }
+      }
+
+Tests
+  - Test your code. It can be as simple as a function that tests the code.
+  - Example:
+    function itSquareRoots4() {
+      return squareRoot(4) === 2;
+    }
+
+    itSquareRoots();
+    << true
+
+  - There is also testing frameworks available. Jest is the one discussed in the manual.
+  - Jest is created by Facebook.
+    * Install it in the terminal with this command:
+      npm install -g jest
+    * Test to see if it installed correctly with this command:
+      jest -v
+      << v19.0.2
+  - To test the squareRoot() from ealier, you'd create a seperate .js file (like squareRoot.test.js) and put the following code in it:
+
+      // Square Root Function
+      function squareRoot(number) {
+        'use strict';
+        if (number < 0) {
+          throw new RangeErrror('You can't find the square root of a negatative number.")
+        }
+        return Math.sqrt(number);
+      };
+
+      // Test Function
+      test('square root of 4 is 2', () => {expect(squareRoot(4)).toBe(2);} );
+        - 'square root of 4 is 2': First Parameter. String. Describes what we are testing.
+        - (): Second Parameter. Anonymous Function.
+          * Contains expect() Function. Takes the function we are testing (squareRoot(4)) as an
+            argument. It returns an expectation object. The expectation object has a method
+            called a matcher (.toBe(2)).
+
+  - To run this test, you'd go to the folder that contains the squareRoot.test.js file and enter the following command in the console:
+    jest -c {}
+
+? Couldn't get Jest to work in VS Code. Downloaded and installed the extension, but no luck.
+
