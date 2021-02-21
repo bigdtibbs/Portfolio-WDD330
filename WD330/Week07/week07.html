@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week07.css">
+    <title>Week 07 Reading Notes and Activities</title>
+</head>
+<body>
+    <h1>Week 7 Notes and Program</h1><br>
+
+    <h3>Arrow Function</h3>
+    <div id="square">
+        const square = x => x*x; <br>
+        square(5)
+    </div><br>
+
+    <h3> Hello Function Call() Method (No Parameter)</h3>
+    <div id="hello">
+        function sayHello() {<br>
+            return `Hello, my name is ${this.name}.`;<br>
+        }<br>
+        let appendHello = sayHello.call(dora);<br>
+        helloDiv.append(appendHello); <br>
+        >> 
+    </div><br>
+
+    <h3>Hello Function Call() Method (With Parameter)</h3>
+    <div id="sayHelloDiv">
+        function sayHelloAshlee(greeting='Hello') {<br>
+            return `${greeting} My name is ${this.name}.`;<br>
+        }<br>
+        >> 
+    </div> <br>
+
+    <h3>Immediately Invoked Function Expressions (IFFE's)</h3>
+    <div id="iffy1">
+        Good for invoking a function and varaibles within the scope of just this function. <br>
+        Think "temporary" variables. They don't linger in the code. Used and tossed. <br><br>
+        (function() {<br>
+            const name = 'Ikora Rey';<br>
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];<br>
+            const date = new Date(), today = days[date.getDay()];<br>
+            <br>
+            let appendiffy1 = `Welcome back ${name}. Today is ${today}.`;<br>
+            <br>
+            iffy1Div.append(appendiffy1);<br>
+        })(); <== ***Double Parenthesis at the end calls the function!!!***<br><br>
+        >>
+    </div><br><br>
+    <div id="iffy2">
+        <h4>Same thing, just as a "block" or in "block format".</h4><br>
+        {<br>
+            const name = 'Commander Zavala';<br>
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];<br>
+            const date = new Date(), today = days[date.getDay()];<br><br>
+        
+            let appendiffy2 = `Welcome back ${name}. Today is ${today}.`;<br><br>
+        
+            iffy2Div.append(appendiffy2);<br>
+        }<br><br>
+        >> 
+    </div><br><br>
+    <div id="swapping">
+        <h5>Slick way to swap values.</h5><br>
+        let [a, b] = [1, 2];<br>
+        [a, b] = [b, a];<br><br>
+
+        let appendSwapping = `a = ${a}. b = ${b}.`;<br><br>
+
+        swappingDiv.append(appendSwapping);<br><br>
+        >> 
+    </div><br>
+
+    <h3> Functions That Define & Rewrite Themselves</h3>
+    <div id="party">
+        Create a function that does something. Then create an anonymous functions inside <br>
+        that does something else. The first time the function is called, it does the first <br>
+        thing. Afterwards, it does the second thing. If the function is assigned to another <br>
+        variable before it is first called, that variable keeps the function in its first form. <br>
+        <br>
+
+        function party() {<br>
+            let amazing = `Wow! This is amazing!`;<br><br>
+        
+            party = function() {<br>
+               amazing = `Been there, got the T-Shirt.`;<br><br>
+        
+               return amazing;<br>
+            }<br><br>
+        
+            return amazing;<br>
+        }<br><br>
+        
+        const beachParty = party;<br>
+        const addP1 = document.createElement('p');<br>
+        const addP2 = document.createElement('p');<br>
+        const addP3 = document.createElement('p');<br>
+        const addP4 = document.createElement('p');<br>
+        const lineBreak = document.createElement('br');<br><br>
+        
+        // First Call<br>
+        addP1.append(beachParty());<br>
+        addP1.appendChild(lineBreak);<br>
+        partyDiv.appendChild(addP1);<br><br>
+        
+        // Second Call<br>
+        addP2.append(party());<br>
+        addP2.appendChild(lineBreak);<br>
+        partyDiv.appendChild(addP2);<br><br>
+        
+        // Third Call<br>
+        addP3.append(party());<br>
+        addP3.appendChild(lineBreak);<br>
+        partyDiv.appendChild(addP3);<br><br>
+        
+        // Fourth Call<br>
+        addP4.append(beachParty());<br>
+        addP4.appendChild(lineBreak);<br>
+        partyDiv.appendChild(addP4);<br><br>
+
+    </div><br><br>
+
+    <h3> Recursive Functions </h3>
+    <div id="recursive">
+        Uug, here we go again. Useful on occasion. A function that acts like a loop.<br>
+        Why not just use a stinking loop?<br><br>
+
+        function factorial(factorialN) {<br>
+            if (factorialN === 0) {<br>
+                return 1;<br>
+            }<br>
+            else {<br>
+                return factorialN * factorial(factorialN - 1);<br>
+            }<br>
+        }<br><br>
+        
+        let appendRecursive = factorial(5);<br>
+        recursiveDiv.append(appendRecursive);<br><br>
+        >> 
+    </div><br><br>
+
+    <h3>Promises</h3>
+    <div id="promise">
+        Asynchronous operation stuff. Means something can run out of order. <br>
+        These have a life cycle. Either they are "pending" or "settled". Settled<br>
+        promised have two outcomes: resolved or rejected (didn't work, unsuccessful,<br>
+        error/error/error.)<br><br>
+
+        Promises are created with a constructor function, which uses an "executor" argument.<br>
+        The executor initilizes the promise and starts the asynochronous operation. This is weird - <br>
+        It accepts two <br>functions<br> as arguments: resolve() and reject(). The one is called<br>
+        if successful (resolve()), the other if it fails (reject()).<br><br>
+
+        const dice = {<br>
+            sides: 6,<br>
+            roll() {<br>
+                return Math.floor(this.sides * Math.random()) +1;<br>
+            }<br>
+        }<br><br>
+        
+        const addP5 = document.createElement('p');<br>
+        const addP6 = document.createElement('p');<br>
+        const addP7 = document.createElement('p');<br><br>
+        
+        addP5.append(">> Before the roll..");<br>
+        addP5.appendChild(lineBreak);<br>
+        promiseDiv.appendChild(addP5);<br><br>
+        
+        const roll = new Promise( (resolve, reject) => {<br>
+            const m = dice.roll();<br>
+            if(m > 1) {<br>
+                setTimeout( () => {resolve(m)}, m*2000);<br>
+            }<br>
+            else {<br>
+                setTimeout( () => reject(m), m*2000);<br>
+            }<br>
+        });<br><br>
+        
+        roll.then(result => addP6.append(`>> I rolled a ${result}.`))<br>
+            .catch(result => addP6.append(`>> Drat! . . . I rolled a ${result}!`));<br>
+        addP6.appendChild(lineBreak);<br>
+        promiseDiv.appendChild(addP6);<br><br>
+        
+        addP7.append(">> After the roll.");<br>
+        addP7.appendChild(lineBreak);<br>
+        promiseDiv.appendChild(addP7);<br><br>
+    </div><br><br>
+
+    <h3>AJAX</h3>
+    <div id="ajax">
+        AJAX allows a webpage (or portions of it) to update without it reloading.<br>
+        Imgaine a chat app that required the whole webpage to update everytime you<br>
+        sent or received a message. Not very user friendly. AJAX (or Asynchronous<br>
+        Javascript XML) resolves this issue. I was in high school during the 'A <br>
+        Brief History of AJAX' section of the reading. I recall how it used to work.<br><br>
+
+        Some other bits from the reading:<br><br>
+        <b>CORS:</b> Cross-origin resource sharing. Allows resources to be requested from<br>
+        another website. Usesful for API's and such.<br><br>
+        <b>API:</b> Application programming interface. A collection of methods and data from<br>
+        an external website or source. Weather and earthquake data, for example, can <br>
+        be pulled from external sources via an API.<br><br>
+        <b>Response Interface:</b>An API will have a 'Fetch API' which uses a 'Respons <br>
+        Interface' that deals with the returned, or response object.<br><br>
+        <b>Redirect:</b> A method that can be used to direct to another URL. redirect()<br><br>
+        <b>Text Responses</b> A method that takes a stream of text from the response. After<br>
+        it reads it to completion, it returns a promise that resolves to a USVString object<br>
+        that can be treated as a string in JavaScript.<br><br>
+        <b>File Responses:</b> Uses a blob() method to read a file of data. After it has<br>
+        read the file, it returns a promise that resolves with a blob object.<br><br>
+        <b>JSON Responses:</b> The most common AJAX response. Uses the json() method.<br>
+        Transforms a string of JSON data into a promise that resolves to a JS object.<br><br>
+        <b>Request Interface:</b> We use a request object as an argument. Created<br>
+        using the request() constructor.<br><br>
+
+        <button id='number'>Number Fact</button>
+        <button id='chuck'>Chuck Norris Fact</button>
+        
+        <div id='output'>
+            Ajax response will appear here
+        </div>
+            
+    </div>
+
+
+</body>
+<script src="week07.js" type="text/javascript"></script>
+</html>
