@@ -220,8 +220,44 @@
         
         <div id='output'>
             Ajax response will appear here
-        </div>
-            
+        </div><br><br>
+
+const textButton = document.getElementById('number');<br>
+const apiButton = document.getElementById('chuck');<br>
+const outputDiv = document.getElementById('output');<br><br>
+
+// URL's assigned to variables. Cleaner and easier.<br>
+const textURL = 'http://numbersapi.com/random';<br>
+const apiURL = 'https://api.chucknorris.io/jokes/random';<br><br>
+
+// Event handler for the Number Button.<br>
+// Constructs a fetch request. Returns a promise.<br>
+textButton.addEventListener('click', () => {<br>
+    fetch(textURL).then( response => {<br>
+        outputDiv.innerHTML = 'Waiting for response...';<br>
+        if(response.ok) {<br>
+            return response;<br>
+        }<br>
+        throw Error(response.statusText);<br>
+        })<br>
+    .then( response => response.text() )<br>
+    .then( text => outputDiv.innerText = text )<br>
+    .catch( error => console.log('There was an error:', error))<br>
+    },false);<br><br>
+    
+// Event handler for the Fact button.<br>
+apiButton.addEventListener('click', () => {<br>
+    fetch(apiURL).then( response => {<br>
+        outputDiv.innerHTML = 'Waiting for response...';<br>
+        if(response.ok) {<br>
+            return response;<br>
+        }<br>
+        throw Error(response.statusText);<br>
+         })<br>
+        .then( response => response.json() )<br>
+        .then( data => outputDiv.innerText = data.value )<br>
+        .catch( error => console.log('There was an error:', error))<br>
+    },false);<br><br> 
     </div>
 
 
