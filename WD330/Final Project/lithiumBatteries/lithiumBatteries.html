@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lithiumBatteries.css">
+    <title>Shipping Website</title>
+    <script src="https://kit.fontawesome.com/d0e5e69733.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="headerDiv">
+        <header class="header">  
+            <img src="JSLogo.webp" class="img-JSLogo">
+            <h1>Shipping Resources</h1>
+            <nav class="headerNav">
+                <ul class="headerUl">
+                    <li><a href="..\main.html">Main Menu</a></li>
+                    <li><a href="..\harmonizedCodes/harmonizedCodes.html">Harmonized Codes</a></li>
+                    <li><a href="#">Account Information</a></li>
+                    <li><a href="#">Shipping Forms</a></li>
+                    <li><a href="#">Freight</a></li>              
+                    <li><a href="#">Ports of Export</a></li>
+                    <li><a href="#">Shipping Supplies</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <h2>Side Menu</h2>
+            <div id="sidebarLinks">
+                <ul>
+                    <li><a href="#"><i class="fab fa-fedex">FedEx</i></a></li>
+                    <li><a href="#"><i class="fab fa-ups">UPS</i></a></li>
+                    <li><a href="#"><i class="fab fa-dhl">DHL</i></a></li>
+                    <li><a href="#"><i class="fas fa-truck">Old Dominion</i></a></li>
+                    <li><a href="#"><i class="fas fa-shipping-fast">R & L Carriers</i></a></li>
+                    <li><a href="#"><i class="fas fa-seedling">HM Info</i></a></li>
+                    <li><a href="#"><i class="fas fa-cloud-sun-rain">Weather</i></a></li>    
+                </ul>
+            </div>
+            <div class="weatherPreview">
+                <h5 id="weatherSidebarCity"></h5>
+                <div class="weatherSidebarDegrees">
+                    <div class="weather-icon">
+                        <img src="icons/unknown.png" alt="weatherSidebarIcon" id="weatherSidebarIcon">
+                    </div>    
+                    <div class="weatherSidebarDegrees">
+                        <h4 id="weatherSidebarTemp"></h4>
+                        <span id="weatherSidebarDegreeFC"></span>
+                    </div>
+                    <h6 id="weatherSidebarDesc" style="text-transform:capitalize"></h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="batteryFormDiv">
+            <h1>Shipping Weight Calculator</h1>
+            <form action="" method="">
+                <div>
+                    <h2>Part Number /  Quantity</h2>
+                </div>
+                <div>    
+                    <label for="PN14849">14849</label>
+                    <input type="number" name="QTY14849" id="QTY14849" value="0" style="text-align:right; height:23px; font-size:14px;">
+                </div>
+                <div>    
+                    <label for="PN20545">20545</label>
+                    <input type="number" name="QTY20545" id="QTY20545" value="0" style="text-align:right; height:23px; font-size:14px;" >
+                </div>
+                <div>    
+                    <label for="PN25261">25261</label>
+                    <input type="number" name="QTY25261" id="QTY25261" value="0" style="text-align:right; height:23px; font-size:14px;">
+                </div>
+                <div>    
+                    <label for="PN27220">27220</label>
+                    <input type="number" name="QTY27220" id="QTY27220" value="0" style="text-align:right; height:23px; font-size:14px;">
+                </div>                <div>    
+                    <label for="PN27574">27574</label>
+                    <input type="number" name="QTY27574" id="QTY27574" value="0" style="text-align:right; height:23px; font-size:14px;">
+                </div>                <div>    
+                    <label for="PN27575">27575</label>
+                    <input type="number" name="QTY27575" id="QTY27575" value="0" style="text-align:right; height:23px; font-size:14px;">
+                </div>                <div>    
+                    <label for="PN28000">28000</label>
+                    <input type="number" name="QTY28000" id="QTY28000" value="0" style="text-align:right; height:23px; font-size:14px;" >
+                </div>                <div>    
+                    <label for="PN28937">28937</label>
+                    <input type="number" name="QTY28937" id="QTY28937" value="0" style="text-align:right; height:23px; font-size:14px;">
+                </div>
+                <div>
+                    <button type="submit" id="calcBtn">Submit</button>
+                    <button type="reset" value="reset" type="reset" class="btnreset" onclick="window.location.reload()">Reset</button>
+                </div>
+            </form>
+
+            <div id="batteryWeightDisplay"></div>
+            <div id="numPackagesDisplay"></div>
+        </div>
+
+    </div>
+
+
+
+        
+    
+</body>
+<script src="lithiumBatteries.js"></script>
+</html>

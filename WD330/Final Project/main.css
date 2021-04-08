@@ -123,3 +123,43 @@ button.hover {
     font-weight:bolder;
 }
 
+.weatherPreview {
+    margin: 0 auto;
+    background-color: #585555;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    text-align: center;
+    padding-top: 5rem;
+    height: 30vh;
+}
+
+.weatherPreview h4 h5 h6 span {
+    margin: 0;
+}
+
+.weatherPreview h4 {
+    font-size: 2rem;
+    padding-bottom: .5rem;
+    display: inline-block;
+}
+
+.weatherPreview h5 {
+    font-size: 1.3rem;
+    padding-top: 1.5rem;
+}
+
+.weatherPreview h6 {
+    font-size: 1.2rem;
+    padding-bottom: .5rem;
+}
+
+.weather-icon {
+    padding-bottom: .5rem;
+    
+}
+
+.weatherSidebarDegreeFC {
+    display: inline-block;
+    font-weight: 900;
+}
+

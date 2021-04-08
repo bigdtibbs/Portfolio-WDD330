@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="harmonizedCodes.css">
+    <title>Shipping Website</title>
+    <script src="https://kit.fontawesome.com/d0e5e69733.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="headerDiv">
+        <header class="header">  
+            <img src="JSLogo.webp" class="img-JSLogo">
+            <h1>Shipping Resources</h1>
+            <nav class="headerNav">
+                <ul class="headerUl">
+                    <li><a href="..\main.html">Main Menu</a></li>
+                    <li><a href="..\lithiumBatteries/lithiumBatteries.html">Li-Ion Batteries</a></li>
+                    <li><a href="#">Account Information</a></li>
+                    <li><a href="#">Shipping Forms</a></li>
+                    <li><a href="#">Freight</a></li>              
+                    <li><a href="#">Ports of Export</a></li>
+                    <li><a href="#">Shipping Supplies</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <h2>Side Menu</h2>
+            <div id="sidebarLinks">
+                <ul>
+                    <li><a href="#"><i class="fab fa-fedex">FedEx</i></a></li>
+                    <li><a href="#"><i class="fab fa-ups">UPS</i></a></li>
+                    <li><a href="#"><i class="fab fa-dhl">DHL</i></a></li>
+                    <li><a href="#"><i class="fas fa-truck">Old Dominion</i></a></li>
+                    <li><a href="#"><i class="fas fa-shipping-fast">R & L Carriers</i></a></li>
+                    <li><a href="#"><i class="fas fa-seedling">HM Info</i></a></li>
+                    <li><a href="#"><i class="fas fa-cloud-sun-rain">Weather</i></a></li>    
+                </ul>
+            </div>
+            <div class="weatherPreview">
+                <h5 id="weatherSidebarCity"></h5>
+                <div class="weatherSidebarDegrees">
+                    <div class="weather-icon">
+                        <img src="icons/unknown.png" alt="weatherSidebarIcon" id="weatherSidebarIcon">
+                    </div>    
+                    <div class="weatherSidebarDegrees">
+                        <h4 id="weatherSidebarTemp"></h4>
+                        <span id="weatherSidebarDegreeFC"></span>
+                    </div>
+                    <h6 id="weatherSidebarDesc" style="text-transform:capitalize"></h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="harmonizedCodesDiv">
+            <iframe class="harmonized" src="harmCodes.html"></iframe>
+
+        </div>
+            
+    </div>
+  
+</body>
+<script src="harmonizedCodes.js"></script>
+</html>

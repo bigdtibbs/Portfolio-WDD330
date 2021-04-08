@@ -14,11 +14,11 @@
         <h1>Shipping Resources</h1>
         <nav class="headerNav">
             <ul class="headerUl">
-                <li><a href="#">Harmonized Codes</a></li>
+                <li><a href="harmonizedCodes/harmonizedCodes.html">Harmonized Codes</a></li>
                 <li><a href="#">Account Information</a></li>
                 <li><a href="#">Shipping Forms</a></li>
                 <li><a href="#">Freight</a></li>
-                <li><a href="#">Li-Ion Batteries</a></li>
+                <li><a href="lithiumBatteries/lithiumBatteries.html">Li-Ion Batteries</a></li>
                 <li><a href="#">Ports of Export</a></li>
                 <li><a href="#">Shipping Supplies</a></li>
             </ul>
@@ -28,16 +28,35 @@
     <div class="wrapper">
         <div class="sidebar">
             <h2>Side Menu</h2>
-            <ul>
-                <li><a href="#"><i class="fab fa-fedex">FedEx</i></a></li>
-                <li><a href="#"><i class="fab fa-ups">UPS</i></a></li>
-                <li><a href="#"><i class="fab fa-dhl">DHL</i></a></li>
-                <li><a href="#"><i class="fas fa-truck">Old Dominion</i></a></li>
-                <li><a href="#"><i class="fas fa-shipping-fast">R & L Carriers</i></a></li>
-                <li><a href="#"><i class="fas fa-seedling">HM Info</i></a></li>
-                <li><a href="#"><i class="fas fa-cloud-sun-rain">Weather</i></a></li>
-            </ul>
+            <div id="sidebarLinks">
+                <ul>
+                    <li><a href="#"><i class="fab fa-fedex">FedEx</i></a></li>
+                    <li><a href="#"><i class="fab fa-ups">UPS</i></a></li>
+                    <li><a href="#"><i class="fab fa-dhl">DHL</i></a></li>
+                    <li><a href="#"><i class="fas fa-truck">Old Dominion</i></a></li>
+                    <li><a href="#"><i class="fas fa-shipping-fast">R & L Carriers</i></a></li>
+                    <li><a href="#"><i class="fas fa-seedling">HM Info</i></a></li>
+                    <li><a href="#"><i class="fas fa-cloud-sun-rain">Weather</i></a></li>    
+                </ul>
+            </div>
+            <div class="weatherPreview">
+                <h5 id="weatherSidebarCity"></h5>
+                <div class="weatherSidebarDegrees">
+                    <div class="weather-icon">
+                        <img src="icons/unknown.png" alt="weatherSidebarIcon" id="weatherSidebarIcon">
+                    </div>    
+                    <div class="weatherSidebarDegrees">
+                        <h4 id="weatherSidebarTemp"></h4>
+                        <span id="weatherSidebarDegreeFC"></span>
+                    </div>
+                    <h6 id="weatherSidebarDesc" style="text-transform:capitalize"></h6>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div id="main">
+        
     </div>
         
     

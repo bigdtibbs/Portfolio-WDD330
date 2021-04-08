@@ -1,0 +1,73 @@
+body{
+    text-align: center;
+    background: black;
+}
+
+body div{
+    margin: 0 10% 10% 10%;
+    text-align: center;
+    font-size: 2.0rem;
+    background: rgb(50, 50, 50);
+    border: 5px solid yellow;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+button{
+    font-size: 2.0rem;
+    padding: 7px;
+    color: white;
+    background: #2AB26A;
+    border: none;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+button:hover{
+    transition: .5s;
+    transform: scale(1.25);
+}
+
+#previous{
+    transition: .5s;
+}
+
+#next{
+    transition: .5s;
+}
+
+#previous:hover{
+    transition: .5s;
+    transform: scale(1.25);
+    border-radius: 20px 0 0 20px;
+}
+
+#next:hover{
+    transition: .5s;
+    transform: scale(1.25);
+    border-radius: 0 20px 20px 0;
+}
+
+body div a, p{
+    color: white;
+}
+
+h1{
+    color: #D4F2B2;
+}
+body div a:visited{
+    color: red;
+}
+
+img{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+p#header{
+    color: rgb(255,234,31);
+}
+
+span{
+    color: white;
+}
